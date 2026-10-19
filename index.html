@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 6 - Fetch API &amp; Form DOM</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Tugas Week 6</h1>
+    <p>Fetch API &amp; Form dengan DOM / Event Handling</p>
+    <nav>
+      <a href="#produk">Data Produk</a>
+      <a href="#form">Form Pendaftaran</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== BAGIAN 1: FETCH API ===== -->
+    <section id="produk" class="card">
+      <h2>1. Data Produk (Fetch API)</h2>
+
+      <div class="toolbar">
+        <label for="searchProduk">Cari produk:</label>
+        <input type="text" id="searchProduk" placeholder="Ketik nama produk..." disabled>
+        <button type="button" id="btnMuatUlang">Muat Ulang</button>
+      </div>
+
+      <p id="statusProduk" class="status" role="status" aria-live="polite"></p>
+      <ul id="daftarProduk" class="product-grid"></ul>
+    </section>
+
+    <!-- ===== BAGIAN 2: FORM ===== -->
+    <section id="form" class="card">
+      <h2>2. Form Pendaftaran Workshop</h2>
+
+      <form id="formDaftar" novalidate>
+        <div class="field">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso">
+          <small class="error" id="errNama"></small>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="nama@email.com">
+          <small class="error" id="errEmail"></small>
+        </div>
+
+        <div class="field">
+          <label for="umur">Umur</label>
+          <input type="number" id="umur" name="umur" placeholder="17 - 60">
+          <small class="error" id="errUmur"></small>
+        </div>
+
+        <div class="field">
+          <label for="topik">Topik Workshop</label>
+          <select id="topik" name="topik">
+            <option value="">-- Pilih topik --</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Mobile Development">Mobile Development</option>
+            <option value="UI/UX Design">UI/UX Design</option>
+          </select>
+          <small class="error" id="errTopik"></small>
+        </div>
+
+        <div class="field">
+          <label for="alasan">Alasan Mengikuti</label>
+          <textarea id="alasan" name="alasan" rows="3" maxlength="150" placeholder="Minimal 10 karakter"></textarea>
+          <small class="counter"><span id="hitungAlasan">0</span>/150 karakter</small>
+          <small class="error" id="errAlasan"></small>
+        </div>
+
+        <div class="field checkbox">
+          <input type="checkbox" id="setuju" name="setuju">
+          <label for="setuju">Saya menyetujui data di atas benar</label>
+          <small class="error" id="errSetuju"></small>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Daftar</button>
+          <button type="reset" id="btnReset" class="secondary">Reset</button>
+        </div>
+      </form>
+
+      <div id="hasilForm" class="result" hidden></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 - Tugas Individu Week 6</p>
+  </footer>
+
+  <script src="js/produk.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>
